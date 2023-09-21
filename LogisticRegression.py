@@ -16,7 +16,7 @@ y = iris.target
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, random_state=12)
 
 # Creating a logistic regression model for Sklearn Iris Dataset
-iris_model = linear_model.LogisticRegression(solver='liblinear', multi_class='auto')
+iris_model = linear_model.LogisticRegression(solver='lbfgs', multi_class='auto', max_iter=1000)
 iris_model.fit(x_train, y_train)
 
 # Making predictions on the test data
@@ -39,7 +39,7 @@ y = y.values.ravel()
 x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.3, random_state=12)
 
 #Creating a Logistic Regression model for the Wiki DataSet
-wikiModel=linear_model.LogisticRegression()
+wikiModel=linear_model.LogisticRegression(solver='lbfgs', multi_class='auto', max_iter=1000)
 wikiModel.fit(x_train,y_train)
 
 # Making predictions on the test data
@@ -64,7 +64,7 @@ y = y.values.ravel()
 x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.3, random_state=12)
 
 #Creating a Logistic Regression model for the Wiki DataSet
-partial_iris_model=linear_model.LogisticRegression()
+partial_iris_model=linear_model.LogisticRegression(solver='lbfgs', multi_class='auto', max_iter=1000)
 partial_iris_model.fit(x_train,y_train)
 
 # Making predictions on the test data
